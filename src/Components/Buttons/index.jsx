@@ -1,7 +1,7 @@
 import StyledButton from "./Button.style";
 
-const Button = ({ children }) => {
-  return <StyledButton>{children}</StyledButton>;
+const Button = ({ children, variant }) => {
+  return <StyledButton variant={variant}>{children}</StyledButton>;
 };
 
 export default Button;
