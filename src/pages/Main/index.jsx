@@ -10,19 +10,29 @@ import { useState } from "react";
 const Main = () => {
   const [activeCard, setActiveCard] = useState();
   const [randomCard, setRandomCard] = useState();
-  const images = { Scissors: Scissors, Paper: Hand, Rock: Leadership };
+  const [res, setRes] = useState();
+  const [data, setData] = useState();
+  const [allRes, setAllRes] = useState([]);
 
   const card = [
     {
       img: Leadership,
       alt: "Leadership",
       name: "Rock",
+      damages: {
+        2: false,
+        1: true,
+      },
       id: 3,
     },
     {
       img: Hand,
       alt: "hand_img",
       name: "Paper",
+      damages: {
+        1: false,
+        3: true,
+      },
       id: 2,
     },
     {
@@ -30,26 +40,33 @@ const Main = () => {
       alt: "hand_img",
       name: "Scissors",
       id: 1,
+      damages: {
+        3: false,
+        2: true,
+      },
     },
   ];
 
+  const images = { 1: Scissors, 2: Hand, 3: Leadership };
+
   const startGame = () => {
+    const arr = [];
     const random = Math.floor(Math.random() * card.length);
     setRandomCard(card[random].img);
 
-    if (activeCard === card[random].name) {
-      console.log("you win");
-    } else {
-      console.log("you lose ");
-    }
+    setAllRes([...allRes, { user: activeCard, computer: random }]);
 
-    console.log(card[random].name);
+    if (card[random].damages[activeCard] === true) {
+      setRes("Computer win");
+    } else if (card[random].damages[activeCard] == undefined) {
+      setRes("Draw");
+    } else {
+      setRes("You win");
+    }
   };
 
-  // console.log(activeCard);
-
-  const handleCard = (name) => {
-    setActiveCard(name);
+  const handleCard = (id) => {
+    setActiveCard(id);
   };
 
   return (
@@ -80,8 +97,26 @@ const Main = () => {
             <Button onclick={startGame} variant={"green"}>
               Play
             </Button>
+            <p className="answer">Result: {res}</p>
           </div>
-          <div className="main__game-list"></div>
+          <div className="main__game-list">
+            <p
+              style={{
+                fontSize: "20px",
+                color: "GrayText",
+                textAlign: "center",
+                padding: "10px 0 20px 0 ",
+                borderBottom: "1px solid #cacaca",
+              }}
+            >
+              Game history
+            </p>
+            <p>
+              {allRes.map(({ user, computer }) => (
+                <h1>user: {user}</h1>
+              ))}
+            </p>
+          </div>
         </div>
       </Container>
     </MainStyle>

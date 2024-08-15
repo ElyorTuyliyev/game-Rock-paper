@@ -1,9 +1,9 @@
 import CardStyle from "./card.style";
 
-const Card = ({ img, alt, name, onclick }) => {
+const Card = ({ img, alt, id, name, onclick }) => {
   return (
     <CardStyle>
-      <div onClick={() => onclick(name)} className="card__box-wrapper">
+      <div onClick={() => onclick(id)} className="card__box-wrapper">
         <img src={img} alt={alt} />
         <p className="card__title">{name}</p>
       </div>

@@ -64,5 +64,9 @@ const MainStyle = styled.div`
     transform: translateY(-80px);
     width: 286px;
   }
+
+  .answer {
+    font-size: 50px;
+  }
 `;
 export default MainStyle;
