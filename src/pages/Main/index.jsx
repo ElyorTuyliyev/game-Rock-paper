@@ -28,35 +28,36 @@ const Main = () => {
     },
   ];
 
+  const startGame = (id) => {};
+  const handleCard = (name) => {
+    console.log(name);
+  };
   return (
     <MainStyle>
       <Container>
         <div className="main__wrapper">
           <div className="main__conditions-wrapper">
             {card.map((item) => (
-              <Card key={item.name} {...item} />
+              <Card onclick={handleCard} key={item.name} {...item} />
             ))}
           </div>
           <div className="main__game-board-wrapper">
             <div className="main__game-persons">
-              <div>
-                <div>?</div>
-                <p>You</p>
+              <div className="main__game-question-wrapper">
+                <div className="main__question-box-wrapper">?</div>
+                <p className="main__person-name"> You</p>
               </div>
-              <p>VS</p>
-              <div>
-                <div>?</div>
-                <p>Computer</p>
+              <p className="main__game-vs">VS</p>
+              <div className="main__game-question-wrapper">
+                <div className="main__question-box-wrapper">?</div>
+                <p className="main__person-name"> Computer</p>
               </div>
             </div>
-            <Button variant={"green"}>start</Button>
+            <Button onclick={startGame} variant={"green"}>
+              start
+            </Button>
           </div>
-          <div className="main__game-list">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Recusandae, repellat sunt nobis suscipit laudantium temporibus id
-            accusantium unde, tempora numquam adipisci commodi? Natus facere
-            voluptatibus magni laborum vitae perferendis quasi.WWS
-          </div>
+          <div className="main__game-list"></div>
         </div>
       </Container>
     </MainStyle>
