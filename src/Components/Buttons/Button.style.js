@@ -5,7 +5,7 @@ const StyledButton = styled.button`
   border-radius: 60px;
   min-width: 409px;
   border: none;
-  padding: 24px;
+  padding: 15px;
   font-size: 30px;
   color: #fff;
   cursor: pointer;
