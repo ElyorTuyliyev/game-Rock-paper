@@ -50,16 +50,19 @@ const Main = () => {
   const images = { 1: Scissors, 2: Hand, 3: Leadership };
 
   const startGame = () => {
-    const arr = [];
-    const random = Math.floor(Math.random() * card.length);
-    setRandomCard(card[random].img);
-
-    if (card[random].damages[activeCard] === true) {
-      setRes("Computer win");
-    } else if (card[random].damages[activeCard] == undefined) {
-      setRes("Draw");
+    if (!activeCard) {
+      alert("please check  your card");
     } else {
-      setRes("You win");
+      const random = Math.floor(Math.random() * card.length);
+      setRandomCard(card[random].img);
+
+      if (card[random].damages[activeCard] === true) {
+        setRes("Computer win");
+      } else if (card[random].damages[activeCard] == undefined) {
+        setRes("Draw");
+      } else {
+        setRes("You win");
+      }
     }
   };
 
@@ -83,6 +86,9 @@ const Main = () => {
             ))}
           </div>
           <div className="main__game-board-wrapper">
+            <p style={{ position: "absolute", top: "50px" }} className="answer">
+              Result: {res}
+            </p>
             <div className="main__game-persons">
               <div className="main__game-question-wrapper">
                 <div className="main__question-box-wrapper">
@@ -98,10 +104,13 @@ const Main = () => {
                 <p className="main__person-name"> Computer</p>
               </div>
             </div>
-            <Button onclick={startGame} variant={"green"}>
+            <Button
+              disabled={!activeCard}
+              onclick={startGame}
+              variant={"green"}
+            >
               Play
             </Button>
-            <p className="answer">Result: {res}</p>
           </div>
           <div className="main__game-list">
             <p

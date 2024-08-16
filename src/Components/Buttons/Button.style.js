@@ -15,5 +15,12 @@ const StyledButton = styled.button`
       : props.variant === "green"
       ? "#0bd4a4"
       : "white"};
+
+  &:disabled {
+    opacity: 0.5;
+    background-color: gainsboro;
+    color: gray;
+    cursor: not-allowed;
+  }
 `;
 export default StyledButton;
