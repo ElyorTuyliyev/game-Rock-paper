@@ -74,7 +74,7 @@ const MainStyle = styled.div`
   }
 
   .main__res-wrapper::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
 
   .main__res-wrapper::-webkit-scrollbar-track {
