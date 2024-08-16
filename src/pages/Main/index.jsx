@@ -5,7 +5,7 @@ import Leadership from "../../assets/images/leadership.png";
 import Scissors from "../../assets/images/scissors.png";
 import Card from "./Components/cards";
 import Button from "../../Components/Buttons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Main = () => {
   const [activeCard, setActiveCard] = useState();
@@ -54,8 +54,6 @@ const Main = () => {
     const random = Math.floor(Math.random() * card.length);
     setRandomCard(card[random].img);
 
-    setAllRes([...allRes, { res }]);
-
     if (card[random].damages[activeCard] === true) {
       setRes("Computer win");
     } else if (card[random].damages[activeCard] == undefined) {
@@ -69,7 +67,12 @@ const Main = () => {
     setActiveCard(id);
   };
 
-  console.log(allRes);
+  useEffect(() => {
+    if (res) {
+      setAllRes([...allRes, { res }]);
+    }
+  }, [res]);
+
   return (
     <MainStyle>
       <Container>
@@ -113,9 +116,11 @@ const Main = () => {
               Game history
             </p>
             <div className="main__res-wrapper">
-              {/* {allRes.map((item) => (
-                <p>user: {item}</p>
-              ))} */}
+              {allRes.map((item, index) => (
+                <p>
+                  {index + 1}-game: {item?.res}
+                </p>
+              ))}
             </div>
           </div>
         </div>
