@@ -54,7 +54,7 @@ const Main = () => {
     const random = Math.floor(Math.random() * card.length);
     setRandomCard(card[random].img);
 
-    setAllRes([...allRes, { user: activeCard, computer: random }]);
+    setAllRes([...allRes, { res }]);
 
     if (card[random].damages[activeCard] === true) {
       setRes("Computer win");
@@ -69,6 +69,7 @@ const Main = () => {
     setActiveCard(id);
   };
 
+  console.log(allRes);
   return (
     <MainStyle>
       <Container>
@@ -111,11 +112,11 @@ const Main = () => {
             >
               Game history
             </p>
-            <p>
-              {allRes.map(({ user, computer }) => (
-                <h1>user: {user}</h1>
-              ))}
-            </p>
+            <div className="main__res-wrapper">
+              {/* {allRes.map((item) => (
+                <p>user: {item}</p>
+              ))} */}
+            </div>
           </div>
         </div>
       </Container>

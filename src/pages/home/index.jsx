@@ -1,4 +1,3 @@
-import StyledButton from "../../Components/Buttons/Button.style";
 import Container from "../../container";
 import HomeStyle from "./home.style";
 import logo from "../../assets/images/logo.png";
@@ -14,10 +13,11 @@ const Home = () => {
         </div>
 
         <div className="home__btn-wrapper">
-          <Link>
+          <Link to={"/main"}>
             <Button variant="blue">Play with computer</Button>
           </Link>
-          <Link>
+
+          <Link to={"/main"}>
             <Button variant="blue">Play with friends</Button>
           </Link>
         </div>

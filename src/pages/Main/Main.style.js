@@ -68,5 +68,26 @@ const MainStyle = styled.div`
   .answer {
     font-size: 50px;
   }
+  .main__res-wrapper {
+    height: 650px;
+    overflow: auto;
+  }
+
+  .main__res-wrapper::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .main__res-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .main__res-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+
+  .main__res-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `;
 export default MainStyle;
