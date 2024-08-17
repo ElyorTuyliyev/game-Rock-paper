@@ -73,8 +73,6 @@ const Main = () => {
         setRes("You win");
       }
     }
-
-    console.log(allRes);
   };
 
   const handleCard = (id) => {
@@ -112,7 +110,7 @@ const Main = () => {
               <div className="main__game-question-wrapper">
                 <div className="main__question-box-wrapper">
                   {activeCard ? (
-                    <img src={images[activeCard]} alt="card" />
+                    <img src={images[activeCard]} alt="rock-paper-scissors" />
                   ) : (
                     "?"
                   )}
@@ -122,7 +120,11 @@ const Main = () => {
               <p className="main__game-vs">VS</p>
               <div className="main__game-question-wrapper">
                 <div className="main__question-box-wrapper">
-                  {randomCard ? <img src={randomCard} /> : "?"}
+                  {randomCard ? (
+                    <img src={randomCard} alt="rock-paper-scissors" />
+                  ) : (
+                    "?"
+                  )}
                 </div>
                 <p className="main__person-name"> Computer</p>
               </div>
