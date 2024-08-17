@@ -83,7 +83,7 @@ const Main = () => {
     if (res) {
       setAllRes([...allRes, { res }]);
     }
-  }, [res, allRes]);
+  }, [res]);
 
   return (
     <MainStyle>
