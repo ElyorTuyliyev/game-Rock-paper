@@ -50,6 +50,13 @@ const Main = () => {
   const images = { 1: Scissors, 2: Hand, 3: Leadership };
 
   const startGame = () => {
+    const newDate = new Date();
+    const year = newDate.getFullYear();
+    const day = newDate.getDate();
+    const month = newDate.getMonth() + 1;
+    const hours = newDate.getHours();
+    const minutes = newDate.getMinutes();
+    setData(`${hours}:${minutes} , ${day}.${month}.${year}`);
     if (!activeCard) {
       alert("please check  your card");
     } else {
@@ -115,8 +122,9 @@ const Main = () => {
           <div className="main__game-list">
             <p
               style={{
-                fontSize: "20px",
-                color: "GrayText",
+                fontSize: "22px",
+                fontWeight: "700",
+                color: "#bababa",
                 textAlign: "center",
                 padding: "10px 0 20px 0 ",
                 borderBottom: "1px solid #cacaca",
@@ -130,6 +138,11 @@ const Main = () => {
                   {index + 1}-game: {item?.res}
                 </p>
               ))}
+            </div>
+            <div className="main__date-wrapper">
+              <p> Game: #0</p>
+              <p> Date: {data}</p>
+              <p> Type: You vs Computer</p>
             </div>
           </div>
         </div>

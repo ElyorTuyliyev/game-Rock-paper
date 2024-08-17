@@ -71,6 +71,11 @@ const MainStyle = styled.div`
   .main__res-wrapper {
     height: 650px;
     overflow: auto;
+    p {
+      color: #b4b1b1;
+      font-size: 20px;
+      font-weight: 700;
+    }
   }
 
   .main__res-wrapper::-webkit-scrollbar {
@@ -88,6 +93,18 @@ const MainStyle = styled.div`
 
   .main__res-wrapper::-webkit-scrollbar-thumb:hover {
     background: #555;
+  }
+
+  .main__date-wrapper {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    P {
+      color: #b4b1b1;
+      font-size: 22px;
+      font-weight: 700;
+    }
   }
 `;
 export default MainStyle;
