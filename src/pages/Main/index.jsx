@@ -13,6 +13,7 @@ const Main = () => {
   const [res, setRes] = useState();
   const [data, setData] = useState();
   const [allRes, setAllRes] = useState([]);
+  const [counters, setCounters] = useState(0);
 
   const card = [
     {
@@ -57,6 +58,7 @@ const Main = () => {
     const hours = newDate.getHours();
     const minutes = newDate.getMinutes();
     setData(`${hours}:${minutes} , ${day}.${month}.${year}`);
+    setCounters((prev) => prev + 1);
     if (!activeCard) {
       alert("please check  your card");
     } else {
@@ -65,12 +67,14 @@ const Main = () => {
 
       if (card[random].damages[activeCard] === true) {
         setRes("Computer win");
-      } else if (card[random].damages[activeCard] == undefined) {
+      } else if (card[random].damages[activeCard] === undefined) {
         setRes("Draw");
       } else {
         setRes("You win");
       }
     }
+
+    console.log(allRes);
   };
 
   const handleCard = (id) => {
@@ -81,7 +85,7 @@ const Main = () => {
     if (res) {
       setAllRes([...allRes, { res }]);
     }
-  }, [res]);
+  }, [res, allRes]);
 
   return (
     <MainStyle>
@@ -93,13 +97,25 @@ const Main = () => {
             ))}
           </div>
           <div className="main__game-board-wrapper">
-            <p style={{ position: "absolute", top: "50px" }} className="answer">
+            <p
+              style={{
+                position: "absolute",
+                top: "50px",
+                color: "yellowgreen",
+                fontWeight: "500",
+              }}
+              className="answer"
+            >
               Result: {res}
             </p>
             <div className="main__game-persons">
               <div className="main__game-question-wrapper">
                 <div className="main__question-box-wrapper">
-                  {activeCard ? <img src={images[activeCard]} /> : "?"}
+                  {activeCard ? (
+                    <img src={images[activeCard]} alt="card" />
+                  ) : (
+                    "?"
+                  )}
                 </div>
                 <p className="main__person-name"> You</p>
               </div>
@@ -140,7 +156,8 @@ const Main = () => {
               ))}
             </div>
             <div className="main__date-wrapper">
-              <p> Game: #0</p>
+              <p> Winner: you</p>
+              <p> Game: #{counters}</p>
               <p> Date: {data}</p>
               <p> Type: You vs Computer</p>
             </div>
