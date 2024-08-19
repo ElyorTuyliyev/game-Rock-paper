@@ -34,7 +34,6 @@ const MainStyle = styled.div`
   .main__question-box-wrapper {
     width: 200px;
     height: 200px;
-
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -153,6 +152,52 @@ const MainStyle = styled.div`
       height: 100px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+    }
+    .main__question-box-wrapper {
+      width: 150px;
+      height: 150px;
+    }
+    .main__game-persons {
+      gap: 30px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .main__res-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 570px) {
+    .main__res-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .main__date-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .card__box-wrapper {
+    img {
+      width: 50px;
+    }
+  }
+  .main__question-box-wrapper {
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+  }
+
+  .main__game-vs {
+    font-size: 40px;
+  }
+
+  .main__person-name {
+    font-size: 20px;
+  }
+  .main__question-box-wrapper {
+    img {
+      width: 50px;
     }
   }
 `;
