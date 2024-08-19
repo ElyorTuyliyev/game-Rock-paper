@@ -69,7 +69,7 @@ const MainStyle = styled.div`
     font-size: 50px;
   }
   .main__res-wrapper {
-    height: 650px;
+    height: 437px;
     overflow: auto;
     p {
       color: #b4b1b1;
@@ -104,6 +104,52 @@ const MainStyle = styled.div`
       color: #b4b1b1;
       font-size: 22px;
       font-weight: 700;
+    }
+  }
+
+  @media screen and (max-width: 1140px) {
+    .main__wrapper {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .main__conditions-wrapper {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    .answer {
+      display: none;
+    }
+
+    .main__game-list {
+      padding: 10px;
+      transform: translateY(0px);
+      width: 100%;
+      P {
+        padding: 5px !important;
+      }
+    }
+
+    .main__res-wrapper {
+      height: 100px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      P {
+        height: auto;
+      }
+    }
+
+    .main__person-name {
+      padding: 10px;
+    }
+
+    .main__date-wrapper {
+      height: 100px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 `;
