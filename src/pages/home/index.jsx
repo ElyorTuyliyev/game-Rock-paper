@@ -9,7 +9,7 @@ const Home = () => {
     <HomeStyle>
       <Container>
         <div className="home__wrapper">
-          <img src={logo} alt="logo" />
+          <img className="home__img" src={logo} alt="logo" />
         </div>
 
         <div className="home__btn-wrapper">

@@ -209,5 +209,9 @@ const MainStyle = styled.div`
       }
     }
   }
+
+  .home__img {
+    transform: rotate(20deg);
+  }
 `;
 export default MainStyle;

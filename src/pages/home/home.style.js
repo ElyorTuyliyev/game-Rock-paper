@@ -17,5 +17,19 @@ const HomeStyle = styled.div`
     display: flex;
     justify-content: space-between;
   }
+
+  .home__img {
+    transform: rotate(20deg);
+    animation: rock 4s infinite linear;
+  }
+
+  @keyframes rock {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;
 export default HomeStyle;
