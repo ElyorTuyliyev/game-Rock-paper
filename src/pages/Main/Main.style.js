@@ -174,6 +174,11 @@ const MainStyle = styled.div`
     }
     .main__date-wrapper {
       grid-template-columns: repeat(1, 1fr);
+      padding: 25px 0 0 0;
+    }
+
+    .main__game-list {
+      display: block;
     }
   }
 
