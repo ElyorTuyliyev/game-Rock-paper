@@ -5,7 +5,7 @@ import Leadership from "../../assets/images/leadership.png";
 import Scissors from "../../assets/images/scissors.png";
 import Card from "./Components/cards";
 import Button from "../../Components/Buttons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Main = () => {
   const [activeCard, setActiveCard] = useState();
@@ -57,8 +57,13 @@ const Main = () => {
     const month = newDate.getMonth() + 1;
     const hours = newDate.getHours();
     const minutes = newDate.getMinutes();
+
+    let result = "";
+
     setData(`${hours}:${minutes} , ${day}.${month}.${year}`);
+
     setCounters((prev) => prev + 1);
+
     if (!activeCard) {
       alert("please check  your card");
     } else {
@@ -66,24 +71,21 @@ const Main = () => {
       setRandomCard(card[random].img);
 
       if (card[random].damages[activeCard] === true) {
-        setRes("Computer win");
+        result = "Computer win";
       } else if (card[random].damages[activeCard] === undefined) {
-        setRes("Draw");
+        result = "Draw";
       } else {
-        setRes("You win");
+        result = "You win";
       }
+
+      setRes(result);
+      setAllRes([...allRes, { res: result }]);
     }
   };
 
   const handleCard = (id) => {
     setActiveCard(id);
   };
-
-  useEffect(() => {
-    if (res) {
-      setAllRes([...allRes, { res }]);
-    }
-  }, [res]);
 
   return (
     <MainStyle>

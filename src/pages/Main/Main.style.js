@@ -63,6 +63,9 @@ const MainStyle = styled.div`
     padding: 18px;
     transform: translateY(-80px);
     width: 286px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .answer {
