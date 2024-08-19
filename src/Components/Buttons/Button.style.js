@@ -5,8 +5,8 @@ const StyledButton = styled.button`
   max-width: 409px;
   width: 100%;
   border: none;
-  padding: 12px;
-  font-size: 30px;
+  padding: 12px 15px;
+  font-size: 25px;
   color: #fff;
   cursor: pointer;
   background-color: ${(props) =>
@@ -21,6 +21,9 @@ const StyledButton = styled.button`
     background-color: gainsboro;
     color: gray;
     cursor: not-allowed;
+  }
+  @media screen and (max-width: 570px) {
+    font-size: 15px;
   }
 `;
 export default StyledButton;
