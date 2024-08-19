@@ -169,6 +169,10 @@ const MainStyle = styled.div`
   }
 
   @media screen and (max-width: 570px) {
+    .main__wrapper {
+      gap: 10px;
+    }
+
     .main__res-wrapper {
       grid-template-columns: repeat(1, 1fr);
     }
