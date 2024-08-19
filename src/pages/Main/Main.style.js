@@ -180,29 +180,29 @@ const MainStyle = styled.div`
     .main__game-list {
       display: block;
     }
-  }
 
-  .card__box-wrapper {
-    img {
-      width: 50px;
+    .card__box-wrapper {
+      img {
+        width: 50px;
+      }
     }
-  }
-  .main__question-box-wrapper {
-    width: 80px;
-    height: 80px;
-    font-size: 30px;
-  }
+    .main__question-box-wrapper {
+      width: 80px;
+      height: 80px;
+      font-size: 30px;
+    }
 
-  .main__game-vs {
-    font-size: 40px;
-  }
+    .main__game-vs {
+      font-size: 40px;
+    }
 
-  .main__person-name {
-    font-size: 20px;
-  }
-  .main__question-box-wrapper {
-    img {
-      width: 50px;
+    .main__person-name {
+      font-size: 20px;
+    }
+    .main__question-box-wrapper {
+      img {
+        width: 50px;
+      }
     }
   }
 `;
