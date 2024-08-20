@@ -14,8 +14,10 @@ const HomeStyle = styled.div`
   }
 
   .home__btn-wrapper {
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    max-width: 700px;
   }
 
   .home__img {

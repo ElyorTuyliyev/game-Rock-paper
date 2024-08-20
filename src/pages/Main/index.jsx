@@ -87,6 +87,13 @@ const Main = () => {
     setActiveCard(id);
   };
 
+  const scrollToEndHandler = () => {
+    allRes.current?.scroll({
+      behavior: "smooth",
+      top: allRes.current.scrollHeight,
+    });
+  };
+
   return (
     <MainStyle>
       <Container>
@@ -135,6 +142,7 @@ const Main = () => {
               disabled={!activeCard}
               onclick={startGame}
               variant={"green"}
+              scrollToEndHandler={scrollToEndHandler}
             >
               Play
             </Button>
