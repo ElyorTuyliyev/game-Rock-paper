@@ -142,7 +142,7 @@ const Main = () => {
               disabled={!activeCard}
               onclick={startGame}
               variant={"green"}
-              scrollToEndHandler={scrollToEndHandler}
+              scrollToEndHandler
             >
               Play
             </Button>
