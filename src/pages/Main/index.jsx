@@ -168,7 +168,7 @@ const Main = () => {
               ))}
             </div>
             <div className="main__date-wrapper">
-              <p> Winner: you</p>
+              <p> Winner: {res}</p>
               <p> Game: #{counters}</p>
               <p> Date: {data}</p>
               <p> Type: You vs Computer</p>
